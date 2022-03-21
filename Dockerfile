@@ -32,7 +32,11 @@ RUN apt -y install \
 RUN apt -y install \
         libsodium-dev \
         apt-utils \
-        wget
+        wget \
+        curl \
+        netcat-openbsd \
+        netcat \
+        ncat
 RUN wget https://doma.2038.io/software/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb && \
     dpkg -i /tmp/chrome.deb && rm -v /tmp/chrome.deb
 RUN useradd -m user
