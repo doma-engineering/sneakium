@@ -34,6 +34,7 @@ RUN apt -y install \
         apt-utils \
         wget \
         curl \
+        nodejs \
         netcat-openbsd \
         netcat \
         ncat
