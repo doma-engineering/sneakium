@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM node:17
 # https://askubuntu.com/questions/909277/avoiding-user-interaction-with-tzdata-when-installing-certbot-in-a-docker-contai
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
@@ -34,10 +34,9 @@ RUN apt -y install \
         apt-utils \
         wget \
         curl \
-        nodejs \
         netcat-openbsd \
         netcat \
         ncat
-RUN wget https://doma.2038.io/software/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb && \
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb && \
     dpkg -i /tmp/chrome.deb && rm -v /tmp/chrome.deb
 RUN useradd -m user
